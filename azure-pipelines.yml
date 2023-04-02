@@ -38,12 +38,11 @@ stages:
         tags: |
           $(tag)
 
-
     - task: CopyFiles@2
       inputs:
         SourceFolder: '$(System.DefaultWorkingDirectory)/kube-manifests'
         Contents: '**'
-        TargetFolder: '$(System.DefaultWorkingDirectory)'
+        TargetFolder: '$(Build.ArtifactStagingDirectory)'
         OverWrite: true
 
     - task: PublishBuildArtifacts@1
