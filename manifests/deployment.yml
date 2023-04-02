@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: april0218 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: april0218
+  template:
+    metadata:
+      labels:
+        app: april0218 
+    spec:
+      containers:
+        - name: april0218 
+          image: wanderlust.azurecr.io/april0218
+          ports:
+          - containerPort: 80
