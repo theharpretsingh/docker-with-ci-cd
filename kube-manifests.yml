@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: app1-nginx
-          image: theharpretsingh/docker-with-ci-cd:V1.#{Build.BuildId}#
+          image: theharpretsingh/docker-with-ci-cd:v1.#{Build.BuildId}#
           ports:
             - containerPort: 80
 ---
