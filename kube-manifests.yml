@@ -5,7 +5,7 @@ metadata:
   labels:
     app: app1-nginx
 spec:
-  replicas: 1
+  replicas: 4
   selector:
     matchLabels:
       app: app1-nginx
@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: app1-nginx
-          image: theharpretsingh/docker-with-ci-cd:v1.#{Build.BuildId}#
+          image: theharpretsingh/docker-with-ci-cd:#{Build.BuildId}#
           ports:
             - containerPort: 80
 ---
