@@ -1,0 +1,25 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- master
+
+pool:
+  name: Default
+steps:
+- task: Docker@0
+  displayName: 'build an image'
+  inputs:
+    containerregistrytype: 'Container Registry'
+    dockerRegistryConnection: 'docker-pipeline'
+    dockerFile: Dockerfile
+
+- task: Docker@0
+  displayName: 'push the image'
+  inputs:
+    containerregistrytype: 'Container Registry'
+    dockerRegistryConnection: 'docker-pipeline'
+    action: 'Push an image'
+
