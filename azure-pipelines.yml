@@ -1,0 +1,16 @@
+pool:
+  name: Default
+steps:
+- task: Docker@0
+  displayName: build
+  inputs:
+    containerregistrytype: 'Container Registry'
+    dockerFile: Dockerfile
+
+- task: Docker@0
+  displayName: 'push the image'
+  inputs:
+    containerregistrytype: 'Container Registry'
+    dockerRegistryConnection: 'dev-dkr'
+    action: 'Push an image'
+
