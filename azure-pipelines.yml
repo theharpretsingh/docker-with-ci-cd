@@ -5,12 +5,12 @@ steps:
   displayName: build
   inputs:
     containerregistrytype: 'Container Registry'
+    dockerRegistryConnection: mydocker
     dockerFile: Dockerfile
 
 - task: Docker@0
-  displayName: 'push the image'
+  displayName: push
   inputs:
     containerregistrytype: 'Container Registry'
-    dockerRegistryConnection: 'dev-dkr'
+    dockerRegistryConnection: mydocker
     action: 'Push an image'
-
